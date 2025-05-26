@@ -15,10 +15,11 @@ function VideoWall() {
             overflow: "hidden",
         }}>
 
-            <Box pos={'absolute'} w={636} h={356} border={'1px'} display={'flex'} justifyContent={'center'} alignItems={'center'} transition={'all 0.5s ease-in-out'}
+            <Box pos={'absolute'} w={636} h={356} border={'1px'} display={'flex'} justifyContent={'center'} alignItems={'center'}
+                transition={'all 0.5s'}
                 sx={{
                     zIndex: -1,
-                    transform: "rotateY(18deg) scale(0.35, 0.8) translate(-18%, -2%)",
+                    transform: "rotateZ(0deg) rotateY(15deg) scale(0.375, 0.775) translate(-18%, -2.5%)",
                     transformOrigin: "20% center",
                     backgroundColor: "white",
                     transformStyle: "preserve-3d",
@@ -36,11 +37,12 @@ function VideoWall() {
                     }}
                 />
             </Box>
-            <Box pos={'absolute'} w={636} h={356} border={'1px'} display={'flex'} alignItems={'center'} px={'10%'} transition={'all 0.5s ease-in-out'}
+            <Box pos={'absolute'} w={636} h={356} border={'1px'} display={'flex'} alignItems={'center'} px={'10%'}
+                transition={'all 0.5s'}
                 sx={{
                     zIndex: -2,
-                    transform: "rotateY(-20deg) scale(0.45, 0.75) translate(12%, -12%)",
-                    transformOrigin: "80% center",
+                    transform: "rotateZ(-0deg) rotateY(-13deg) scale(0.45, 0.7) translate(5%, 0%)",
+                    transformOrigin: "right center",
                     backgroundColor: "white",
                     transformStyle: "preserve-3d",
                 }}

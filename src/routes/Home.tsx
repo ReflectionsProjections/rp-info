@@ -5,13 +5,17 @@ import FoldableFAQ from "../components/Foldable";
 
 export const Home = () => {
   return (
-    <>
+    <Box>
       <Header />
-      <Box minH="calc(100vh - headerHeight)">
-        {" "}
-        {/* Adjust headerHeight to your header's actual height */}
+      <Box
+        pt={5}
+        pb={10}
+        minH="calc(100vh - 80px)" // Adjust 80px to your actual header height
+        display="flex"
+        alignItems="center"
+      >
         <FoldableFAQ />
       </Box>
-    </>
+    </Box>
   );
 };

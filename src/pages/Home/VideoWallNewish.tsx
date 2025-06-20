@@ -22,7 +22,7 @@ function TextPane() {
 
 function VideoWall() {
 
-    const videoRef = useRef<HTMLVideoElement>(null);
+    const videoRef = useRef < HTMLVideoElement > (null);
     const [phase, setPhase] = useState(0)
 
     return (
@@ -34,17 +34,17 @@ function VideoWall() {
             <Box w={vWallWidth} h={vWallHeight} border={'0px solid'} pointerEvents={'none'} pos={'absolute'}
                 zIndex={8} sx={{ perspective: "800px", transform: "scale(0.7)" }}>
                 {/* left wall */}
-                <Box pos={'absolute'} w={vWallWidth} h={vWallHeight} display={'flex'} justifyContent={'center'} alignItems={'center'}
+                <Box pos={'absolute'} w={vWallWidth * 1.3} h={vWallHeight} display={'flex'} justifyContent={'center'} alignItems={'center'}
                     sx={{
-                        backgroundColor: "white",
+                        background: "linear-gradient(45deg,rgba(219, 212, 204, 1) 0%, rgba(255, 255, 255, 1) 89%, rgba(255, 255, 255, 1) 100%)",
                         border: "1px solid",
                         pointerEvents: "auto",
                         transition: "transform 0.4s linear",
-                        transformOrigin: "center center",
+                        transformOrigin: "left center",
                         transformStyle: "preserve-3d",
-                        transform: `${phase === -1 ? "rotateY(0deg) translateZ(0px) scale(1.429)" // left wall -> center state
+                        transform: `${phase === -1 ? "rotateY(0deg) translateX(-270px) translateZ(0px) scale(1.429)" // left wall -> center state
                             : phase === 1 ? "rotateY(90deg) translateZ(-650px) scaleY(1.77)" // right wall -> center state
-                                : "rotateY(40deg) translateZ(-500px) scaleY(1.6)" // default state
+                                : "rotateY(50deg) translateZ(-500px) scaleY(1.6)" // default state
                             }`,
                     }}
                     onClick={() => {
@@ -52,6 +52,7 @@ function VideoWall() {
                         else setPhase(0);
                     }}
                 >
+                    <Image src='wall_texture_2.jpg' pos={'absolute'} fit={'fill'} w={'100%'} h={'100%'} zIndex={-1} />
                     {/* video lolsies (for no ref forwarding) */}
                     <video width={0.8 * vWallWidth} height={0.8 * vWallHeight}
                         ref={videoRef} src={'video_wall_left.mp4.mov'}
@@ -59,6 +60,7 @@ function VideoWall() {
                         onMouseEnter={() => videoRef.current?.play()}
                         onMouseLeave={() => videoRef.current?.pause()}
                     />
+
                 </Box>
             </Box>
             {/* right perspective box */}
@@ -66,7 +68,7 @@ function VideoWall() {
                 zIndex={7} sx={{ perspective: "1000px", transform: "scale(0.6)" }}>
                 <Box pos={'absolute'} w={vWallWidth} h={vWallHeight} display={'flex'} justifyContent={'center'} alignItems={'center'}
                     padding={'15%'} sx={{
-                        backgroundColor: "white",
+                        background: "radial-gradient(circle at 80%,rgba(255, 255, 255, 1) 30%, rgba(219, 212, 204, 1) 100%);",
                         border: "1px solid",
                         pointerEvents: "auto",
                         transition: "transform 0.4s linear",
@@ -86,21 +88,22 @@ function VideoWall() {
                     <TextPane />
                 </Box>
             </Box>
+            {/* background perspective box */}
             <Box w={vWallWidth} h={vWallHeight} pos={'absolute'} sx={{
                 zIndex: -10,
                 transform: "scale(1)",
-                perspective: `${phase === -1 ? "700px" // left wall -> center state
-                    : phase === 1 ? "700px" // right wall -> center state
+                perspective: `${phase === -1 ? "500px" // left wall -> center state
+                    : phase === 1 ? "500px" // right wall -> center state
                         : "500px" // default state
                     }`,
-                transition: "perspective 0.4s linear",
+                transition: "perspective 0.2s linear",
 
             }}>
                 <Image src='video_wall_background.png' pos={'absolute'} fit={'fill'} w={'100%'} h={'100%'} sx={{
                     transition: "transform 0.4s linear",
-                    transform: `${phase === -1 ? "rotateY(-30deg) scale(2) translateZ(-300px)" // left wall -> center state
-                        : phase === 1 ? "rotateY(30deg) scale(2) translateZ(-300px)" // right wall -> center state
-                            : "rotateY(0deg) scale(2) translateZ(-500px)" // default state
+                    transform: `${phase === -1 ? "rotateY(-40deg) translateZ(-300px) scale(2)" // left wall -> center state
+                        : phase === 1 ? "rotateY(30deg) translateZ(-300px) scale(2)" // right wall -> center state
+                            : "rotateY(0deg) translateZ(-500px) scale(2)" // default state
                         }`,
                 }} />
             </Box>

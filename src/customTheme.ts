@@ -5,10 +5,18 @@ const config: ThemeConfig = {
   useSystemColorMode: false,
 }
 
-export const customTheme = extendTheme({ 
-  config, 
+export const customTheme = extendTheme({
+  config,
   fonts: {
     heading: "'Anonymous Pro', monospace",
     body: "'Anonymous Pro', monospace",
-  } 
+    menu: "'Roboto Slab', monospace",
+  },
+  textStyles: {
+    menu: {
+      fontFamily: "menu",
+      fontSize: "1.15rem",
+      textColor: "white",
+    }
+  }
 });

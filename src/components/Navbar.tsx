@@ -1,47 +1,59 @@
 // src/components/Navbar.tsx
-import { Box, HStack, Link } from '@chakra-ui/react'
+import { Box, chakra, HStack, Link, shouldForwardProp } from '@chakra-ui/react'
 import { NavLink, useLocation } from 'react-router-dom'
-import AnimatedLogo from './AnimatedLogo'
+import { AnimatedLogoConstant } from './AnimatedLogo'
+import { isValidMotionProp, motion, useScroll, useTransform } from 'framer-motion';
 
 export const Navbar = () => {
 
   const location = useLocation();
 
+  // const MotionBox = chakra(motion.div, {
+  //   shouldForwardProp: (prop) =>
+  //     isValidMotionProp(prop) || shouldForwardProp(prop),
+  // })
+
+  // const { scrollY } = useScroll();
+  // const width = useTransform(scrollY, [0, 500], ['100%', '50%']);
+  // const height = useTransform(scrollY, [0, 500], ['85px', '75px']);
+  // const top = useTransform(scrollY, [0, 500], [0, 10]);
+  // const fontSize = useTransform(scrollY, [0, 500], ['1.75rem', '1.15rem']);
+  // const borderRadius = useTransform(scrollY, [0, 500], ['0px', '16px']);
 
   return (
+    // <MotionBox
+    //   data-label="navbar" minH="75px" minW="600px" transformOrigin="bottom center"
+    //   margin="0px auto 0px" px="5px" position="sticky" zIndex={500}
+    //   display="flex" justifyContent="center" alignItems="center"
+    //   bg="gray.400" boxShadow="lg" style={{
+    //     width,
+    //     height,
+    //     top,
+    //     fontSize,
+    //     borderRadius
+    //   }}>
+    <Box data-label="navbar" h="75px" w="50%" minW="650px" margin="0px auto 0px" px="5px" fontSize="1.1rem" zIndex={500}
+      bg="gray.400" boxShadow="xl" borderRadius="2xl" display="flex" justifyContent="center" alignItems="center" pos="sticky" top="10px">
 
 
-    // floating nav bar
-    <Box h="70px" w="50%" minW="600px" mx="auto" my="15px" px="5px"
-      bg="gray.400" borderRadius="2xl" display="flex" justifyContent="center" alignItems="center">
+      {/* todo(): add a small-web version */}
 
-      <HStack justify="space-around" align="center" w="100%">
-        <Box h="50px" w="50px" right="5px" pos="relative"><AnimatedLogo /></Box>
-        <Link as={NavLink} to="/" textStyle="menu"
+      <HStack justify="space-around" align="center" w="100%" >
+        <Box h="55px" w="55px" right="5px" pos="relative"><AnimatedLogoConstant /></Box>
+        <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/" ? "underline" : ""}>about</Link>
-        <Link as={NavLink} to="/archive" textStyle="menu"
+        <Link as={NavLink} to="/archive" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/archive" ? "underline" : ""}>archive</Link>
-        <Link as={NavLink} to="/" textStyle="menu"
+        <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/x" ? "underline" : ""}>team</Link>
-        <Link as={NavLink} to="/faq" textStyle="menu"
+        <Link as={NavLink} to="/faq" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/faq" ? "underline" : ""}>FAQ</Link>
-        <Link as={NavLink} to="/" textStyle="menu"
+        <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/x" ? "underline" : ""}>sponsors</Link>
-        <Link as={NavLink} to="/" textStyle="menu" bg="white" color="gray.400" p="2px 30px" borderRadius="md"
+        <Link as={NavLink} to="/" textStyle="menu" bg="white" color="gray.400" p="2px 22px" borderRadius="md" fontSize="inherit"
           textDecoration={location.pathname == "/x" ? "underline" : ""}>join us!</Link>
       </HStack>
     </Box>
-
-
-    // <Box bg="gray.300" px={4} py={2} shadow="lg">
-    //   <Flex justify="space-between" align="center">
-    //     <Text fontWeight="bold">Info.RP</Text>
-    //     <HStack spacing={4}>
-    // <Link as={NavLink} to="/">Home</Link>
-    // <Link as={NavLink} to="/archive">Archive</Link>
-    // <Link as={NavLink} to="/faq">FAQ</Link>
-    //     </HStack>
-    //   </Flex>
-    // </Box>
+    // </MotionBox>
   )
 }

@@ -6,10 +6,10 @@ import {
   Container,
   VStack,
   Icon,
-  Divider,
 } from '@chakra-ui/react';
 import { FaUser, FaCalendar, FaBuilding, FaMicrophone, FaMapMarkerAlt } from 'react-icons/fa';
 import AnimatedCounter from '../../components/AnimatedCounter';
+import AnimatedPillar from '../../components/AnimatedPillar';
 
 export const Stats = () => {
   const iconColor = "#d84949";
@@ -55,11 +55,12 @@ export const Stats = () => {
           </Heading>
         </Box>
 
-        <Flex
+        <Flex                                                   // numbers
           direction={{ base: 'column', md: 'row' }}
           gap={{ base: 8, md: 0 }}
           justify="space-between"
           textAlign="center"
+          pos="relative" zIndex={5}
         >
           <VStack spacing={1} width={{ base: "auto", md: "20%" }}>
             <Heading as="h3" size="xl" fontWeight="bold">
@@ -97,25 +98,58 @@ export const Stats = () => {
           </VStack>
         </Flex>
 
-        <Flex
+        <Flex                                                   // pillars
           direction="row"
-          align="center"
           justify="space-between"
-          px={28}
-          mt={10}
+          top="-15px"
           display={{ base: "none", md: "flex" }}
+          pos="relative" zIndex={3}
+          paddingTop="100px"
+          height="500px"
+          sx={{
+            maskImage: "linear-gradient(black 30%, transparent 100%)"
+          }}
         >
-          <Icon as={FaUser} w={8} h={8} color={iconColor} />
-          <Divider flex="1" borderColor="gray.400" mx={2} />
-          <Icon as={FaCalendar} w={8} h={8} color={iconColor} />
-          <Divider flex="1" borderColor="gray.400" mx={2} />
-          <Icon as={FaBuilding} w={8} h={8} color={iconColor} />
-          <Divider flex="1" borderColor="gray.400" mx={2} />
-          <Icon as={FaMicrophone} w={8} h={8} color={iconColor} />
-          <Divider flex="1" borderColor="gray.400" mx={2} />
-          <Icon as={FaMapMarkerAlt} w={8} h={8} color={iconColor} />
+          <VStack spacing={1} width="20%">
+            <AnimatedPillar baseHeight={-55} heightDelta={300} time={2}>
+              <Icon as={FaUser} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
+            </AnimatedPillar>
+          </VStack>
+          <VStack spacing={1} width="20%">
+            <AnimatedPillar baseHeight={25} heightDelta={300} time={2} >
+              <Icon as={FaCalendar} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
+            </AnimatedPillar>
+          </VStack>
+          <VStack spacing={1} width="20%">
+            <AnimatedPillar baseHeight={-5} heightDelta={300} time={2} >
+              <Icon as={FaBuilding} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
+            </AnimatedPillar>
+          </VStack>
+          <VStack spacing={1} width="20%">
+            <AnimatedPillar baseHeight={45} heightDelta={300} time={2} >
+              <Icon as={FaMicrophone} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
+            </AnimatedPillar>
+          </VStack>
+          <VStack spacing={1} width="20%">
+            <AnimatedPillar baseHeight={-35} heightDelta={300} time={2} >
+              <Icon as={FaMapMarkerAlt} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
+            </AnimatedPillar>
+          </VStack>
         </Flex>
       </Container>
     </Box>
   );
 };
+
+
+
+
+{/* <Icon as={FaUser} w={8} h={8} color={iconColor} />
+    <Divider flex="1" borderColor="gray.400" mx={2} />
+    <Icon as={FaCalendar} w={8} h={8} color={iconColor} />
+    <Divider flex="1" borderColor="gray.400" mx={2} />
+    <Icon as={FaBuilding} w={8} h={8} color={iconColor} />
+    <Divider flex="1" borderColor="gray.400" mx={2} />
+    <Icon as={FaMicrophone} w={8} h={8} color={iconColor} />
+    <Divider flex="1" borderColor="gray.400" mx={2} />
+    <Icon as={FaMapMarkerAlt} w={8} h={8} color={iconColor} /> */}

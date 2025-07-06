@@ -94,7 +94,7 @@ export const AnimatedLogoHover = () => {
     const [bottomCurrentImage, setBottomCurrentImage] = useState(-1);
     const intervalRef = useRef<number | null>(null);
 
-    const images = ["logo_2025.svg", "logo_2024.svg", "logo_2023.svg", "logo_2022.svg", "logo_2021.svg", "logo_2020.svg", "logo_2019.svg", "logo_2018.svg"]
+    const images = ["logo_info.svg", "logo_2025.svg", "logo_2024.svg", "logo_2023.svg", "logo_2022.svg", "logo_2021.svg", "logo_2020.svg", "logo_2019.svg", "logo_2018.svg"]
 
     // this updates every render so the ref always has a fresh function
     changeImageFnRef.current = () => {

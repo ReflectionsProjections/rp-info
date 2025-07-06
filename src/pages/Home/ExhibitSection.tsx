@@ -14,7 +14,7 @@ export const ExhibitSection = () => {
         maxWidth="6xl"
         mx="auto"
         minH="40vh"
-        my={{ base: 10, md: 20 }}
+        my={{ base: 10, md: 10 }}
         px={{ base: 5, md: 10 }}
         gap={{ base: 8, md: 0 }}
       >

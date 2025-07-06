@@ -1,7 +1,7 @@
 // src/components/Navbar.tsx
 import { Box, chakra, HStack, Link, shouldForwardProp } from '@chakra-ui/react'
 import { NavLink, useLocation } from 'react-router-dom'
-import { AnimatedLogoConstant } from './AnimatedLogo'
+import { AnimatedLogoConstant, AnimatedLogoHover } from './AnimatedLogo'
 import { isValidMotionProp, motion, useScroll, useTransform } from 'framer-motion';
 
 export const Navbar = () => {
@@ -39,7 +39,7 @@ export const Navbar = () => {
       {/* todo(): add a small-web version */}
 
       <HStack justify="space-around" align="center" w="100%" >
-        <Box h="55px" w="55px" right="5px" pos="relative"><AnimatedLogoConstant /></Box>
+        <Box h="55px" w="55px" right="5px" pos="relative"><AnimatedLogoHover /></Box>
         <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/" ? "underline" : ""}>about</Link>
         <Link as={NavLink} to="/archive" textStyle="menu" fontSize="inherit"

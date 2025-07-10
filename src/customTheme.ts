@@ -10,13 +10,15 @@ export const customTheme = extendTheme({
   fonts: {
     heading: "'Anonymous Pro', monospace",
     body: "'Anonymous Pro', monospace",
-    menu: "'Roboto Slab', monospace",
+    menu: "'Raleway', monospace",
   },
   textStyles: {
     menu: {
       fontFamily: "menu",
-      fontSize: "1.15rem",
-      textColor: "white",
+      fontSize: "18px",
+      textColor: "black",
+      fontWeight: "700",
+      textUnderlineOffset: "5px",
     }
   }
 });

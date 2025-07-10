@@ -32,26 +32,26 @@ export const Navbar = () => {
     //     fontSize,
     //     borderRadius
     //   }}>
-    <Box data-label="navbar" h="75px" w="50%" minW="650px" margin="0px auto 0px" px="5px" fontSize="1.1rem" zIndex={500}
-      bg="gray.400" boxShadow="xl" borderRadius="2xl" display="flex" justifyContent="center" alignItems="center" pos="sticky" top="10px">
+    <Box data-label="navbar" h="60px" w="50%" minW="650px" margin="0px auto 0px" px="5px" fontSize="18px" zIndex={500}
+      bg="rgba(250, 250, 250, 0.95)" boxShadow="xl" borderRadius="2xl" display="flex" justifyContent="center" alignItems="center" pos="sticky" top="10px">
 
 
       {/* todo(): add a small-web version */}
 
       <HStack justify="space-around" align="center" w="100%" >
-        <Box h="55px" w="55px" right="5px" pos="relative"><AnimatedLogoHover /></Box>
+        <Box h="50px" w="50px" pos="relative"><AnimatedLogoHover /></Box>
         <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
-          textDecoration={location.pathname == "/" ? "underline" : ""}>about</Link>
+          textDecoration={location.pathname == "/" ? "underline" : ""}>ABOUT</Link>
         <Link as={NavLink} to="/archive" textStyle="menu" fontSize="inherit"
-          textDecoration={location.pathname == "/archive" ? "underline" : ""}>archive</Link>
+          textDecoration={location.pathname == "/archive" ? "underline" : ""}>ARCHIVE</Link>
         <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
-          textDecoration={location.pathname == "/x" ? "underline" : ""}>team</Link>
+          textDecoration={location.pathname == "/x" ? "underline" : ""}>TEAM</Link>
         <Link as={NavLink} to="/faq" textStyle="menu" fontSize="inherit"
           textDecoration={location.pathname == "/faq" ? "underline" : ""}>FAQ</Link>
         <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit"
-          textDecoration={location.pathname == "/x" ? "underline" : ""}>sponsors</Link>
-        <Link as={NavLink} to="/" textStyle="menu" bg="white" color="gray.400" p="2px 22px" borderRadius="md" fontSize="inherit"
-          textDecoration={location.pathname == "/x" ? "underline" : ""}>join us!</Link>
+          textDecoration={location.pathname == "/x" ? "underline" : ""}>SPONSORS</Link>
+        <Link as={NavLink} to="/" textStyle="menu" fontSize="inherit" _hover={{}}
+          bg="black" color="white" p="2px 25px" borderRadius="lg">join us!</Link>
       </HStack>
     </Box>
     // </MotionBox>

@@ -10,12 +10,14 @@ import {
 import { FaUser, FaCalendar, FaBuilding, FaMicrophone, FaMapMarkerAlt } from 'react-icons/fa';
 import AnimatedCounter from '../../components/AnimatedCounter';
 import AnimatedPillar from '../../components/AnimatedPillar';
+import { AnimatedPillarsSection } from '../../components/AnimatedPillarsSection';
+
 
 export const Stats = () => {
   const iconColor = "#d84949";
 
   return (
-    <Box data-label="stats" minH="100vh" py={10}>
+    <Box data-label="stats" id="stats-section" minH="110vh" py={10}>
       <Container maxW="container.xl">
         <Flex direction={{ base: 'column', md: 'row' }} mb={16} align="center">
           <Box flex={1} p={4} w="100%">
@@ -43,7 +45,7 @@ export const Stats = () => {
           </VStack>
         </Flex>
 
-        <Box textAlign="center" mb={16}>
+        <Box textAlign="center" pt={16} mb={16}>
           <Heading
             as="h1"
             size="2xl"
@@ -98,58 +100,16 @@ export const Stats = () => {
           </VStack>
         </Flex>
 
-        <Flex                                                   // pillars
-          direction="row"
-          justify="space-between"
-          top="-15px"
-          display={{ base: "none", md: "flex" }}
-          pos="relative" zIndex={3}
-          paddingTop="100px"
-          height="500px"
-          sx={{
-            maskImage: "linear-gradient(black 30%, transparent 100%)"
-          }}
-        >
-          <VStack spacing={1} width="20%">
-            <AnimatedPillar baseHeight={-55} heightDelta={300} time={2}>
-              <Icon as={FaUser} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
-            </AnimatedPillar>
-          </VStack>
-          <VStack spacing={1} width="20%">
-            <AnimatedPillar baseHeight={25} heightDelta={300} time={2} >
-              <Icon as={FaCalendar} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
-            </AnimatedPillar>
-          </VStack>
-          <VStack spacing={1} width="20%">
-            <AnimatedPillar baseHeight={-5} heightDelta={300} time={2} >
-              <Icon as={FaBuilding} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
-            </AnimatedPillar>
-          </VStack>
-          <VStack spacing={1} width="20%">
-            <AnimatedPillar baseHeight={45} heightDelta={300} time={2} >
-              <Icon as={FaMicrophone} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
-            </AnimatedPillar>
-          </VStack>
-          <VStack spacing={1} width="20%">
-            <AnimatedPillar baseHeight={-35} heightDelta={300} time={2} >
-              <Icon as={FaMapMarkerAlt} w="75px" h="75px" color={iconColor} filter="drop-shadow(5px 20px 10px gray)" />
-            </AnimatedPillar>
-          </VStack>
-        </Flex>
+        <AnimatedPillarsSection icons={[          // pillars
+          "icon_person.svg",
+          "icon_calendar.svg",
+          "icon_building.svg",
+          "icon_speaker.svg",
+          "icon_location.svg",
+        ]}
+        />
+
       </Container>
-    </Box>
+    </Box >
   );
 };
-
-
-
-
-{/* <Icon as={FaUser} w={8} h={8} color={iconColor} />
-    <Divider flex="1" borderColor="gray.400" mx={2} />
-    <Icon as={FaCalendar} w={8} h={8} color={iconColor} />
-    <Divider flex="1" borderColor="gray.400" mx={2} />
-    <Icon as={FaBuilding} w={8} h={8} color={iconColor} />
-    <Divider flex="1" borderColor="gray.400" mx={2} />
-    <Icon as={FaMicrophone} w={8} h={8} color={iconColor} />
-    <Divider flex="1" borderColor="gray.400" mx={2} />
-    <Icon as={FaMapMarkerAlt} w={8} h={8} color={iconColor} /> */}

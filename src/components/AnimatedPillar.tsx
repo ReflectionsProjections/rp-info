@@ -27,15 +27,15 @@ const AnimatedPillar: React.FC<AnimatedCounterProps> = ({ baseHeight, heightDelt
 
                 borderBottom="1px solid black"
             >
-
-                <Box w="100%" display="flex" justifyContent="center" alignItems="center" pos="relative" bottom="15px" zIndex={5}>{children}</Box>
+                {/* pillar */}
+                <Box w="100%" display="flex" justifyContent="center" alignItems="center" pos="relative" bottom="5px" zIndex={5}>{children}</Box>
                 <Box sx={{ transform: "rotateX(60deg)" }} pos="relative" bottom="15px" zIndex={4} w="100%" display="flex" justifyContent="center" alignItems="center">
                     <Box w="84.9px" h="84.9px" bg="rgba(234, 234, 234, 1)" pos="absolute" sx={{ transform: "rotateZ(45deg)" }} />
                 </Box>
                 <Box w="60px" h="500px" bg="rgba(86, 84, 87, 1)" pos="absolute" zIndex={3} mr="60px" sx={{ transform: "skewY(25deg)" }} />
                 <Box w="60px" h="500px" bg="rgba(217, 217, 217, 1)" pos="absolute" zIndex={2} ml="60px" sx={{ transform: "skewY(-25deg)" }} />
-            </MotionBox>
-        </Box>
+            </MotionBox >
+        </Box >
     );
 };
 

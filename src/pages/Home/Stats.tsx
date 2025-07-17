@@ -52,7 +52,7 @@ export const Stats = () => {
             fontWeight="bold"
             lineHeight="1.2"
           >
-            Midwest's Largest Student-Run<br />
+            The Midwest's Largest Student-Run<br />
             Tech Conference
           </Heading>
         </Box>

@@ -1,6 +1,5 @@
-import { Box, Icon, VStack, Image, Flex, Container } from "@chakra-ui/react";
+import { Box, VStack, Image, Flex, Container } from "@chakra-ui/react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 import { createPortal } from "react-dom";
 import AnimatedPillar from "./AnimatedPillar";
 
@@ -14,33 +13,34 @@ const MotionContainer = motion(Container);
 const spotlightHeight = "975px";
 
 export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ icons }) => {
+
     const { scrollY } = useScroll();
-    const offset = 1000;
-    const shadowOpacity = useTransform(scrollY, [-300 + offset, 0 + offset, 350 + offset, 650 + offset], [0, 0.2, 0.2, 0]);
+    const offset = 950;
+    const shadowOpacity = useTransform(scrollY, [-350 + offset, -60 + offset, 350 + offset, 650 + offset], [0, 0.35, 0.35, 0]);
     const heightDiff = useTransform(scrollY, [-250 + offset, 700 + offset], [200, -750]);
 
     return (
         <Box pos="relative" zIndex={100} display={{ base: "none", md: "block" }}>
             {/* portal */}
             {createPortal(
-                <Box pos="fixed" w="100vw" h="100vh" zIndex={50} top="0px" data-label="pillars-overlay" pointerEvents="none">
+                <Box pos="fixed" w="100vw" h="100vh" zIndex={50} top="0" data-label="pillars-overlay" pointerEvents="none">
                     <MotionBox
                         style={{
+                            //willChange: 'opacity',
+                            transform: 'translateZ(0)',
                             opacity: shadowOpacity
                         }}
                         bg="black" w="100%" h="100%"
                     >
-                        <MotionContainer
+                        <MotionContainer data-label="pillars-spotlights"
                             maxW="container.xl"
                             position="absolute"
                             zIndex={3}
                             left="0" right="0"
                             mx="auto"
                             style={{
-                                top: heightDiff
-                            }}
-                            sx={{
-                                maskImage: "linear-gradient(transparent 0%, black 20%, black 80%, transparent 100%)"
+                                top: heightDiff,
+                                maskImage: "linear-gradient(transparent 1%, black 25%, black 80%, transparent 100%)"
                             }}
                         >
                             <Flex                                                   // pillars
@@ -50,23 +50,23 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
                                 width="100%"
                             >
                                 <VStack spacing={1} width="20%" filter="blur(10px)">
-                                    <MotionBox w="200px" h={spotlightHeight} bg="rgba(250, 230, 170, 1)" left="0" pos="relative" zIndex={1}
+                                    <MotionBox w="200px" h={spotlightHeight} bg="rgb(250, 230, 170)" pos="relative" zIndex={1}
                                         clipPath="polygon(25% 0, 75% 0, 95% 100%, 5% 100%)" />
                                 </VStack>
                                 <VStack spacing={1} width="20%" filter="blur(10px)">
-                                    <MotionBox w="200px" h={spotlightHeight} bg="rgba(250, 230, 170, 1)" filter="blur(5px)" left="0" opacity="1" pos="relative" zIndex={1}
+                                    <MotionBox w="200px" h={spotlightHeight} bg="rgb(250, 230, 170)" pos="relative" zIndex={1}
                                         clipPath="polygon(25% 0, 75% 0, 95% 100%, 5% 100%)" />
                                 </VStack>
                                 <VStack spacing={1} width="20%" filter="blur(10px)">
-                                    <MotionBox w="200px" h={spotlightHeight} bg="rgba(250, 230, 170, 1)" filter="blur(5px)" opacity="1" pos="relative" zIndex={1}
+                                    <MotionBox w="200px" h={spotlightHeight} bg="rgb(250, 230, 170)" pos="relative" zIndex={1}
                                         clipPath="polygon(25% 0, 75% 0, 95% 100%, 5% 100%)" />
                                 </VStack>
                                 <VStack spacing={1} width="20%" filter="blur(10px)">
-                                    <MotionBox w="200px" h={spotlightHeight} bg="rgba(250, 230, 170, 1)" filter="blur(5px)" opacity="1" pos="relative" zIndex={1}
+                                    <MotionBox w="200px" h={spotlightHeight} bg="rgb(250, 230, 170)" pos="relative" zIndex={1}
                                         clipPath="polygon(25% 0, 75% 0, 95% 100%, 5% 100%)" />
                                 </VStack>
                                 <VStack spacing={1} width="20%" filter="blur(10px)">
-                                    <MotionBox w="200px" h={spotlightHeight} bg="rgba(250, 230, 170, 1)" filter="blur(5px)" opacity="1" pos="relative" zIndex={1}
+                                    <MotionBox w="200px" h={spotlightHeight} bg="rgb(250, 230, 170)" pos="relative" zIndex={1}
                                         clipPath="polygon(25% 0, 75% 0, 95% 100%, 5% 100%)" />
                                 </VStack>
 

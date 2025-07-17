@@ -23,8 +23,8 @@ export const HoverIconLink: React.FC<HoverIconLinkProps> = ({ link, src, title }
                 transition: {
                     scale: {
                         type: "spring",
-                        stiffness: 10,
-                        damping: 1
+                        stiffness: 20,
+                        damping: 2
                     },
                     opacity: {
                         duration: 1,
@@ -50,8 +50,8 @@ export const HoverIconLink: React.FC<HoverIconLinkProps> = ({ link, src, title }
                 rotateY: 360,
                 rotateX: 360,
                 transition: {
-                    scale: { duration: 2 },
-                    opacity: { duration: 3 },
+                    scale: { duration: 1 },
+                    opacity: { duration: 1.25 },
                     rotateY: { duration: 5 },
                     rotateX: { duration: 15 },
                 },

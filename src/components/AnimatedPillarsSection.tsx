@@ -27,7 +27,7 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
                     <MotionBox
                         style={{
                             //willChange: 'opacity',
-                            transform: 'translateZ(0)',
+                            //transform: 'translateZ(0)',
                             opacity: shadowOpacity
                         }}
                         bg="black" w="100%" h="100%"
@@ -43,7 +43,7 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
                                 maskImage: "linear-gradient(transparent 1%, black 25%, black 80%, transparent 100%)"
                             }}
                         >
-                            <Flex                                                   // pillars
+                            <Flex                                                   // spotlights
                                 direction="row"
                                 justify="space-between"
                                 height="100%"

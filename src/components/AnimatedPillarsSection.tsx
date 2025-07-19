@@ -18,6 +18,7 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
     const offset = 950;
     const shadowOpacity = useTransform(scrollY, [-350 + offset, -60 + offset, 350 + offset, 650 + offset], [0, 0.35, 0.35, 0]);
     const heightDiff = useTransform(scrollY, [-250 + offset, 700 + offset], [200, -750]);
+    const translateY = useTransform(heightDiff, h => `translateY(${h}px)`);
 
     return (
         <Box pos="relative" zIndex={100} display={{ base: "none", md: "block" }}>
@@ -39,8 +40,9 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
                             left="0" right="0"
                             mx="auto"
                             style={{
-                                top: heightDiff,
-                                maskImage: "linear-gradient(transparent 1%, black 25%, black 80%, transparent 100%)"
+                                transform: translateY,
+                                willChange: 'transform',
+                                maskImage: "linear-gradient(transparent 1%, black 25%, black 70%, transparent 100%)"
                             }}
                         >
                             <Flex                                                   // spotlights

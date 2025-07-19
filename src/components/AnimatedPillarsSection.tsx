@@ -27,7 +27,7 @@ export const AnimatedPillarsSection: React.FC<AnimatedPillarsSectionProps> = ({ 
                 <Box pos="fixed" w="100vw" h="100vh" zIndex={50} top="0" data-label="pillars-overlay" pointerEvents="none">
                     <MotionBox
                         style={{
-                            //willChange: 'opacity',
+                            willChange: 'opacity',
                             //transform: 'translateZ(0)',
                             opacity: shadowOpacity
                         }}

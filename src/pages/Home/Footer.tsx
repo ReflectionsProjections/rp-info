@@ -10,12 +10,12 @@ import { HoverIconLink } from '../../components/HoverIconLink';
 
 export const Footer = () => {
     const logoCircles: { title: string, link: string, src: string }[] = [
-        { title: "Instagram", link: "https://reflectionsprojections.org", src: "logo_2018.svg" },
-        { title: "Instagram", link: "https://example.com", src: "logo_2018.svg" },
-        { title: "Instagram", link: "reflectionsprojections.org", src: "logo_2018.svg" },
-        { title: "Instagram", link: "reflectionsprojections.org", src: "logo_2018.svg" },
-        { title: "Instagram", link: "reflectionsprojections.org", src: "logo_2018.svg" },
-        { title: "Instagram", link: "reflectionsprojections.org", src: "logo_2018.svg" },
+        { title: "Instagram", link: "https://reflectionsprojections.org", src: "rp2024shine_logo.png" },
+        { title: "Instagram", link: "https://example.com", src: "rp2024shine_logo.png" },
+        { title: "Instagram", link: "reflectionsprojections.org", src: "rp2024shine_logo.png" },
+        { title: "Instagram", link: "reflectionsprojections.org", src: "rp2024shine_logo.png" },
+        { title: "Instagram", link: "reflectionsprojections.org", src: "rp2024shine_logo.png" },
+        { title: "Instagram", link: "reflectionsprojections.org", src: "rp2024shine_logo.png" },
     ]
 
     return (
@@ -43,13 +43,13 @@ export const Footer = () => {
                     <Flex w="100%" direction={{ base: 'row', md: 'column' }} justifyContent="center" alignItems="center" gap={{ base: '10', md: '10' }}>
                         <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: '10', md: '10' }}>
                             <HoverIconLink link={"https://reflectionsprojections.org"} src="instagram_logo.png" />
-                            <Image bg="gray.200" w="80px" h="80px" borderRadius="100px" />
-                            <Image bg="gray.200" w="80px" h="80px" borderRadius="100px" />
+                            <HoverIconLink link={"https://reflectionsprojections.org"} src="instagram_logo.png" />
+                            <HoverIconLink link={"https://reflectionsprojections.org"} src="instagram_logo.png" />
                         </Flex>
                         <Flex direction={{ base: 'column', md: 'row' }} gap={{ base: '10', md: '10' }}>
-                            <Image bg="gray.200" w="80px" h="80px" borderRadius="100px" />
-                            <Image bg="gray.200" w="80px" h="80px" borderRadius="100px" />
-                            <Image bg="gray.200" w="80px" h="80px" borderRadius="100px" />
+                            <HoverIconLink link={"https://reflectionsprojections.org"} src="instagram_logo.png" />
+                            <HoverIconLink link={"https://reflectionsprojections.org"} src="instagram_logo.png" />
+                            <HoverIconLink link={"https://2024.reflectionsprojections.org"} src="rp2024shine_logo.png" />
                         </Flex>
                     </Flex>
                 </Flex>

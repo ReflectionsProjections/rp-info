@@ -1,11 +1,14 @@
-import { Box, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
 export const ExhibitSection = () => {
-  const titleFontSize = useBreakpointValue({ base: "2xl", md: "3xl", lg: "4xl" });
+  //const titleFontSize = useBreakpointValue({ base: "2xl", md: "3xl", lg: "4xl" });
   const subtitleFontSize = useBreakpointValue({ base: "xl", md: "2xl" });
 
   return (
     <section data-label="exhibit section">
+      <Image src="exhibit_background.png" w="100vw" h="900px" fit="fill" pos="absolute" mt="-50px" zIndex={-10} style={{
+        maskImage: "linear-gradient(transparent 10%, black 50%, black 70%, transparent 100%)"
+      }} />
       <Box
         display="flex"
         flexDirection={{ base: "column", md: "row" }}
@@ -13,22 +16,24 @@ export const ExhibitSection = () => {
         alignItems={{ base: "center", md: "center" }}
         maxWidth="6xl"
         mx="auto"
-        minH="40vh"
-        my={{ base: 10, md: 10 }}
+        minH="750px"
+        mt={{ base: 10, md: -4 }}
+        mb={{ base: 10, md: 10 }}
         px={{ base: 5, md: 10 }}
         gap={{ base: 8, md: 0 }}
       >
-        <Box mb={{ base: 6, md: 0 }} textAlign={{ base: "center", md: "left" }}>
+
+        <Box textAlign={{ base: "center", md: "left" }}>
           <Text
-            fontSize={titleFontSize}
-            fontStyle="italic"
-            fontFamily="mono"
+            //fontSize={titleFontSize}
+            textStyle={"textBlock"}
           >
-            Exhibit A
+            EXHIBIT&ensp;A
           </Text>
           <Text
             fontSize={subtitleFontSize}
-            fontFamily="mono"
+            fontFamily={"body"}
+            fontWeight="500"
           >
             RP 2025 Site
           </Text>
@@ -61,6 +66,13 @@ export const ExhibitSection = () => {
             mx="auto"
             maxWidth={{ base: "400px", md: "none" }}
           />
+          {/* on click:
+            - set scroll
+            - expand section height to 100vh ?
+            - rapidly drop perspective
+            - zoom into video -- we probably want a state boolean for this
+          */}
+
 
           <Box
             px={{ base: 5, md: 10 }}

@@ -1,17 +1,14 @@
 // src/components/Navbar.tsx
-import { Box, chakra, HStack, Link, shouldForwardProp } from '@chakra-ui/react'
+import { Box, chakra, HStack, Link } from '@chakra-ui/react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { AnimatedLogoConstant, AnimatedLogoHover } from './AnimatedLogo'
-import { isValidMotionProp, motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Navbar = () => {
 
   const location = useLocation();
 
-  // const MotionBox = chakra(motion.div, {
-  //   shouldForwardProp: (prop) =>
-  //     isValidMotionProp(prop) || shouldForwardProp(prop),
-  // })
+  //const MotionBox = motion(Box);
 
   // const { scrollY } = useScroll();
   // const width = useTransform(scrollY, [0, 500], ['100%', '50%']);

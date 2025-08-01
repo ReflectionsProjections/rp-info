@@ -27,6 +27,7 @@ export const AnimatedLogoConstant = () => {
             setTopCurrentImage(prev => (prev + 2) % images.length); // top switches by 2
             setTopOpacity(prev => (prev + 1) % 2); // top fades in
         }
+
     }
 
     const stopRotation = () => {

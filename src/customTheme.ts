@@ -19,6 +19,13 @@ export const customTheme = extendTheme({
       textColor: "black",
       fontWeight: "700",
       textUnderlineOffset: "5px",
+    },
+    textBlock: {
+      fontFamily: "menu",
+      fontSize: "65px",
+      textColor: "black",
+      fontWeight: "700",
+      textUnderlineOffset: "5px",
     }
   }
 });
